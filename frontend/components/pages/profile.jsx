@@ -24,13 +24,13 @@ const Profile = () => {
 
       try {
         // Fetch user profile
-        const profileRes = await axios.get("http://localhost:5000/profile", {
+        const profileRes = await axios.get("https://blog-app1-87fg.onrender.com/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(profileRes.data.user);
 
         // Fetch all posts
-        const postsRes = await axios.get("http://localhost:5000/posts", {
+        const postsRes = await axios.get("https://blog-app1-87fg.onrender.com/posts", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPosts(postsRes.data);
@@ -55,7 +55,7 @@ const Profile = () => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
 
     try {
-      const res = await axios.delete(`http://localhost:5000/delete/${postId}`, {
+      const res = await axios.delete(`https://blog-app1-87fg.onrender.com/delete/${postId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -71,7 +71,7 @@ const Profile = () => {
   const handleLike = async (postId) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/like/${postId}`,
+        `https://blog-app1-87fg.onrender.com/like/${postId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -107,7 +107,7 @@ const Profile = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/comment/${postId}`,
+        `https://blog-app1-87fg.onrender.com/comment/${postId}`,
         { text },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -302,3 +302,4 @@ const Profile = () => {
 };
 
 export default Profile;
+
