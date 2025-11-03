@@ -37,7 +37,7 @@ const Create = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/create",
+        "https://blog-app1-87fg.onrender.com/create",
         post,
         {
           headers: {
@@ -112,3 +112,4 @@ const Create = () => {
 };
 
 export default Create;
+
