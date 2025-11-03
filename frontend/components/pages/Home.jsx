@@ -27,13 +27,13 @@ const Home = () => {
 
       try {
         // ✅ Fetch user profile
-        const profileRes = await axios.get("http://localhost:5000/profile", {
+        const profileRes = await axios.get("https://blog-app1-87fg.onrender.com/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(profileRes.data.user);
 
         // ✅ Fetch all posts (populated with user info)
-        const res = await axios.get("http://localhost:5000/allposts", {
+        const res = await axios.get("https://blog-app1-87fg.onrender.com/allposts", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -59,7 +59,7 @@ const Home = () => {
   const handleLike = async (postId) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/like/${postId}`,
+        `https://blog-app1-87fg.onrender.com/like/${postId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -95,7 +95,7 @@ const Home = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/comment/${postId}`,
+        `https://blog-app1-87fg.onrender.com/comment/${postId}`,
         { text },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -365,3 +365,4 @@ return (
 };
 
 export default Home;
+
