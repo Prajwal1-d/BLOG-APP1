@@ -28,7 +28,7 @@ const Update = () => {
           return;
         }
 
-        const res = await axios.get(`http://localhost:5000/post/${id}`, {
+        const res = await axios.get(`https://blog-app1-87fg.onrender.com/post/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -135,3 +135,4 @@ const Update = () => {
 };
 
 export default Update;
+
