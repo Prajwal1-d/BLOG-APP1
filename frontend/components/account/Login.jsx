@@ -31,7 +31,7 @@ const Login = () => {
       return;
     }
     try {
-      const res = await axios.post("http://localhost:5000/register", signup);
+      const res = await axios.post("https://blog-app1-87fg.onrender.com/register", signup);
       toast.success(res.data.message || "Registered successfully", {
         position: "top-right",
       });
@@ -46,7 +46,7 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/login", data);
+      const res = await axios.post("https://blog-app1-87fg.onrender.com/login", data);
       localStorage.setItem("token", res.data.token);
       toast.success(res.data.message || "Login successful", {
         position: "top-right",
@@ -194,3 +194,4 @@ const Login = () => {
 };
 
 export default Login;
+
